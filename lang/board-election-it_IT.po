@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: orgs-election\n"
+"POT-Creation-Date: 2015-11-13 08:53+0100\n"
+"PO-Revision-Date: 2015-11-13 08:53+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: board-election.php:31
+msgid "Upgrade Notice"
+msgstr "Avviso aggiornamento"
+
+#: board-election.php:49
+msgid "Donate"
+msgstr "Donazione"
+
+#: board-election.php:51
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: board-election.php:158
+msgid "Board Election"
+msgstr "Elezioni Consiglio Direttivo"
+
+#: board-election.php:162
+msgid "Candidate IDs, separated with a comma"
+msgstr "ID candidati, separati da una virgola"
+
+#: board-election.php:331
+msgid "List of Candidates"
+msgstr "Lista dei candidati"
+
+#: board-election.php:353
+msgid "Sorry, you need to be logged-in to be able to vote."
+msgstr "Spiacenti, è necessario essere registrati per poter votare."
+
+#: board-election.php:354
+msgid "Please"
+msgstr "Grazie di"
+
+#: board-election.php:354
+msgid "login"
+msgstr "effettuare il login."
+
+#: board-election.php:354
+msgid "to continue voting."
+msgstr "per votare."
+
+#: board-election.php:355
+msgid "If you did not register on this website, then please do so"
+msgstr "Se non vi siete registrati su questo sito, si prega di farlo"
+
+#: board-election.php:355
+msgid "here"
+msgstr "qui"
+
+#: board-election.php:355
+msgid ""
+"please remember to validate your registration by clicking on the link you "
+"will receive by email."
+msgstr ""
+"ricordatevi di convalidare la registrazione cliccando sul link riceverete "
+"via e-mail."
+
+#: board-election.php:356
+msgid "Troubles ? Just drop an email to "
+msgstr "Problemi? Basta inviare una mail a"
+
+#: board-election.php:365
+msgid "Sorry, you can no longer vote because the deadline has passed."
+msgstr ""
+"Siamo spiacenti, non è più possibile votare perché il termine è scaduto."
+
+#: board-election.php:366
+msgid "Deadline : "
+msgstr "Termine :"
+
+#: board-election.php:376 board-election.php:391
+msgid "Back"
+msgstr "Indietro"
+
+#: board-election.php:402
+msgid "Welcome back."
+msgstr "Bentornati."
+
+#: board-election.php:403
+msgid "You have already voted. Your candidates are:"
+msgstr "Hai già votato. I vostri candidati sono:"
+
+#: board-election.php:415
+msgid "Hi, it seems you have not been given the right to vote."
+msgstr "Ciao, a quanto pare non è stato dato il diritto di voto."
+
+#: board-election.php:416
+msgid "If you think this is an error, please send an email to "
+msgstr "Se pensi che questo è un errore, si prega di inviare una mail a"
+
+#: board-election.php:425 board-election.php:428
+msgid ""
+"Something went wrong. Please close your browser, come back to this page and "
+"try again. If problems persist, contact the webmaster."
+msgstr ""
+"Qualcosa è andato storto. Si prega di chiudere il browser, tornare a questa "
+"pagina e riprova. Se il problema persiste, contattate il webmaster."
+
+#: board-election.php:432
+msgid "Thank you for voting."
+msgstr "Grazie per aver votato."
+
+#: board-election.php:433
+msgid "The following votes have been registered for you:"
+msgstr "Sono state registrate per te le seguenti scelte:"
+
+#: board-election.php:447
+msgid "Select your 1 candidate"
+msgstr "Seleziona il tuo candidato"
+
+#: board-election.php:449
+msgid "Select up to"
+msgstr "Potete votare fino a"
+
+#: board-election.php:449
+msgid "candidates"
+msgstr "candidati"
+
+#: board-election.php:452
+msgid ""
+"from the list below. When you have made your choice, click the \"Submit my "
+"votes\" button."
+msgstr ""
+"dalla lista allegata. Dopo che avrete effettuato le vostre scelte, "
+"selezionate il bottone \"confermo il mio voto\"."
+
+#: board-election.php:453
+msgid ""
+"If during the selection you click on the wrong candidate, just click again "
+"to remove the vote."
+msgstr ""
+"Se durante la scelta selezionate il candidato sbagliato, è sufficiente "
+"selezionare di nuovo per annullare la scelta."
+
+#: board-election.php:454
+msgid ""
+"Once you click the \"Submit my votes\" button, your choice is stored and can "
+"no longer be changed."
+msgstr ""
+"Una volta che avrete selezionato \"confermo il mio voto\", la vostra scelta "
+"è definitiva e non potrà essere cambiata."
+
+#: board-election.php:456
+msgid "0 votes so far..."
+msgstr "0 voti finora ..."
+
+#: board-election.php:459
+msgid "Submit my votes"
+msgstr "Confermo il mio voto"
+
+#: board-election.php:502
+msgid "vote(s):"
+msgstr "voto/i"
