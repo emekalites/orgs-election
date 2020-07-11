@@ -44,7 +44,7 @@ function b_election_plugin_action_links($links, $file) {
 		// The "page" query string value must be equal to the slug
 		// of the Settings admin page we defined earlier, which in
 		// this case equals "myplugin-settings".
-		$settings_link = '<a href="http://casier.eu/wp-dev/">' . __('Donate', TEXTDOMAIN) . '</a>';
+		$settings_link = '<a href="https://www.buymeacoffee.com/emekaihedoro">' . __('Donate', TEXTDOMAIN) . '</a>';
 		array_unshift($links, $settings_link);
 		$settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=orgs_election">' . __('Settings', TEXTDOMAIN) . '</a>';
 		array_unshift($links, $settings_link);
@@ -325,9 +325,8 @@ function orgs_election_page() {
 
 	echo '</td><td style="text-align: left;vertical-align: top;padding: 35px;">';
 	echo '<table style="border: 1px solid green;">';
-	echo '<tr><td style="vertical-align:top;text-align:center;padding:15px;">Is this plugin helpful ?<br><a href="http://casier.eu/wp-dev/" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" height="40"></a></td></tr>';
-	echo '<tr><td style="vertical-align:top;text-align:center;padding:15px;">Just 1 or 2 EUR/USD for a coffee<br>is very much appreciated!</td></tr>';
-	echo '<tr><td nowrap style="vertical-align:top;text-align:center;padding:15px;">Do you use bbPress?<br>Consider also <a href="http://casier.eu/wp-dev" target="_blank">these great plugins</a>.</td></tr>';
+	echo '<tr><td style="vertical-align:top;text-align:center;padding:15px;">Is this plugin helpful ?<br><a href="https://www.buymeacoffee.com/emekaihedoro" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" height="40"></a></td></tr>';
+	echo '<tr><td style="vertical-align:top;text-align:center;padding:15px;">Just 1 or 2 USD for a coffee<br>is very much appreciated!</td></tr>';
 	echo '</table>';
 
 	echo '</td></tr></table>';
