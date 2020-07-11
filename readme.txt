@@ -14,8 +14,6 @@ Allow all (or a subset of) registered users to elect new board members from a pr
 Allow all (or a subset of) registered users to elect new board members from a predefined list.
 
 * Set an enddate for the voting and the allowed number of votes per candidate.
-* Original Language: English
-* Translation incl : French and Italian [not tested]
 
 For usage information, see   Settings > Board Election 
 

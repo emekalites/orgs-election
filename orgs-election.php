@@ -13,20 +13,13 @@ License: GPL2
 if ( !defined( 'ABSPATH' ) ) exit;
 
 define ('B_ELECTION_VERSION' , '1.0.0');
-define ('TEXTDOMAIN' , 'orgs-election');
-
-// Activate translations
-add_action('plugins_loaded', 'b_elect_load_textdomain');
-function b_elect_load_textdomain() {
-	load_plugin_textdomain( 'orgs-election', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
-}
 
 // add plugin upgrade notification
 add_action('in_plugin_update_message-orgs-election/orgs-election.php', 'bElectionshowUpgradeNotification', 10, 2);
 function bElectionshowUpgradeNotification($currentPluginMetadata, $newPluginMetadata){
 	// check "upgrade_notice"
 	if (isset($newPluginMetadata->upgrade_notice) && strlen(trim($newPluginMetadata->upgrade_notice)) > 0){
-		echo '<p style="background-color: #d54e21; padding: 10px; color: #f9f9f9; margin-top: 10px"><strong>' . __('Upgrade Notice', TEXTDOMAIN) . ':</strong> ';
+		echo '<p style="background-color: #d54e21; padding: 10px; color: #f9f9f9; margin-top: 10px"><strong>Upgrade Notice:</strong> ';
 		echo esc_html($newPluginMetadata->upgrade_notice) . '</p>';
 	}
 }
@@ -44,9 +37,9 @@ function b_election_plugin_action_links($links, $file) {
 		// The "page" query string value must be equal to the slug
 		// of the Settings admin page we defined earlier, which in
 		// this case equals "myplugin-settings".
-		$settings_link = '<a href="https://www.buymeacoffee.com/emekaihedoro">' . __('Donate', TEXTDOMAIN) . '</a>';
+		$settings_link = '<a href="https://www.buymeacoffee.com/emekaihedoro">Donate</a>';
 		array_unshift($links, $settings_link);
-		$settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=orgs_election">' . __('Settings', TEXTDOMAIN) . '</a>';
+		$settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=orgs_election">Settings</a>';
 		array_unshift($links, $settings_link);
 	}
 
@@ -186,11 +179,11 @@ function orgs_election_page() {
 	$endtime["hour"] = date('H', $b_election_end_time);
 	$endtime["min"] = date('i', $b_election_end_time);
 
-	echo '<h1>' . __('Organisation Election', TEXTDOMAIN) . '</h1>';
+	echo '<h1>Organisation Election</h1>';
 	echo '<table border="0"><tr><td>';
 
 	echo '<form action="" method="post">';
-	echo '<p><label>' . __('Office Name', TEXTDOMAIN) . ' : </label>';
+	echo '<p><label>Office Name: </label>';
 	echo '<input type="text" name="b-election-office" id="b-election-office" value="" size="100" /><br>';
 	echo '<label>&nbsp;&nbsp;&nbsp;(Enter the office name)</label></p>';
 	echo '<input type="submit" name="officesave" value="Add Office" />';
@@ -199,8 +192,8 @@ function orgs_election_page() {
 	echo '<form action="" method="post">';
 	foreach ($b_election_cand_ids as $key => $cand_id) {
 		echo '<div class="card" style="width: 100%;min-width: 100%;max-width: 100%;">';
-		echo '<p><label>' . __('Name of Office', TEXTDOMAIN) . ' : </label> <strong>'.$key.'</strong> <a class="mce-btn" href="'.admin_url('options-general.php?page=orgs_election&office='.$key).'">Remove Office</a></p>';
-		echo '<p><label>' . __('Candidate IDs, separated with a comma', TEXTDOMAIN) . ' : </label>';
+		echo '<p><label>Name of Office: </label> <strong>'.$key.'</strong> <a class="mce-btn" href="'.admin_url('options-general.php?page=orgs_election&office='.$key).'">Remove Office</a></p>';
+		echo '<p><label>Candidate IDs, separated with a comma : </label>';
 		echo '<input type="text" name="b-election-cands['.$key.'][]" id="b-election-cand-ids" value="' . join(',', $cand_id) . '" size="100" /><br>';
 		echo '<label>&nbsp;&nbsp;&nbsp;(Enter the media IDs like: 12560,17852,11456,15845)</label></p>';
 		echo '</p>';
@@ -411,10 +404,8 @@ function shortcode_b_election() {
 	}
 
 	if (!is_user_logged_in() ) {
-		echo  __('Sorry, you need to be logged-in to be able to vote.', TEXTDOMAIN) . '<br><br>';
-		echo '<p>' . __('Please', TEXTDOMAIN) . ' <a href="https://www.evosa-intl.org/login/" title="Login">' . __('login', TEXTDOMAIN) . '</a> ' . __('to continue voting.', TEXTDOMAIN) . '</p>';
-		echo '<p>' . __('If you did not register on this website, then please do so', TEXTDOMAIN) . ' <a href="https://www.evosa-intl.org/register/" title="Register">' . __('here', TEXTDOMAIN) . '</a> (' . __('please remember to validate your registration by clicking on the link you will receive by email.', TEXTDOMAIN) . '</p>';
-		echo '<p>' . __('Troubles ? Just drop an email to ', TEXTDOMAIN) . '<a href="mailto:' . $b_election_support_email . '">' . $b_election_support_email . '</a> .</p>';
+		echo 'Sorry, you need to be logged-in to be able to vote.<br><br>';
+		echo '<p>Troubles ? Just drop an email to <a href="mailto:' . $b_election_support_email . '">' . $b_election_support_email . '</a> .</p>';
 		return;
 	}
 
@@ -423,8 +414,8 @@ function shortcode_b_election() {
 		$b_election_end_time_tick = get_option('b-election-end-time', false);
 		if ($b_election_end_time_tick <= current_time( 'timestamp', 1 ) ) {
 			// Time is up !
-			echo __('Sorry, you can no longer vote because the deadline has passed.', TEXTDOMAIN) . '<br><br>';
-			echo __('Deadline : ', TEXTDOMAIN) . date( 'Y-m-d H:i:s', $b_election_end_time_tick ) . '<br>';
+			echo 'Sorry, you can no longer vote because the deadline has passed.<br><br>';
+			echo 'Deadline' . date( 'Y-m-d H:i:s', $b_election_end_time_tick ) . '<br>';
 			return;
 		}
 	}
@@ -435,9 +426,8 @@ function shortcode_b_election() {
 	if ($b_elect_candidates) {
 		$b_elect_candidates_voted = json_decode($b_elect_candidates);
 		if(count($b_elect_candidates_voted) > 0){
-			echo __('Welcome back.', TEXTDOMAIN) . '<br><br>';
-			echo __('You have already voted. Your candidates are:', TEXTDOMAIN);
-			echo '<br><br>';
+			echo 'Welcome back.<br><br>';
+			echo 'You have already voted. Your candidates are:<br><br>';
 			echo '<div class="container">';
 			foreach ($b_elect_candidates_voted as $candidate) {
 				echo '<div class="row">';
@@ -463,8 +453,8 @@ function shortcode_b_election() {
 		if ($user_perm == 'yes') {
 			// ok, user is allowed to vote
 		} else {
-			echo __('Hi, it seems you have not been given the right to vote.', TEXTDOMAIN) . '<br><br>';
-			echo __('If you think this is an error, please send an email to ', TEXTDOMAIN) . '<a href="mailto:' . $b_election_support_email . '">' . $b_election_support_email . '</a> .';
+			echo 'Hi, it seems you have not been given the right to vote.<br><br>';
+			echo 'If you think this is an error, please send an email to <a href="mailto:' . $b_election_support_email . '">' . $b_election_support_email . '</a> .';
 			echo '<br><br>';
 			return;
 		}
@@ -473,13 +463,12 @@ function shortcode_b_election() {
 
 	if ( isset($_POST['submitvotes']) ) {
 		if(!isset($_COOKIE['b-elect-candidates'])) {
-			echo __('Something went wrong. Please close your browser, come back to this page and try again. If problems persist, contact the webmaster.', TEXTDOMAIN);
+			echo 'Something went wrong. Please close your browser, come back to this page and try again. If problems persist, contact the webmaster.';
 		} else {
 			$b_elect_candidates = json_decode(html_entity_decode(stripslashes($_COOKIE['b-elect-candidates'])));
 		    update_user_meta( $user_id, 'b-elect-candidates', json_encode($b_elect_candidates) );
 
-		    echo __('Thank you for voting.', TEXTDOMAIN) . '<br><br>';
-		    echo __('The following votes have been registered for you:', TEXTDOMAIN);
+		    echo 'Thank you for voting.<br><br>The following votes have been registered for you:';
 		    unset($_COOKIE['b-elect-candidates']);
 			echo '<div class="container">';
 			foreach ($b_elect_candidates as $candidate) {
@@ -506,14 +495,14 @@ function shortcode_b_election() {
 		if (!$b_election_max_votes) { $b_election_max_votes = '1'; }
 
 		if ($b_election_max_votes == 1) {
-			$sel_cand = __('Select your 1 candidate', TEXTDOMAIN) . ' ';
+			$sel_cand = 'Select your 1 candidate ';
 		} else {
-			$sel_cand = __('Select up to', TEXTDOMAIN) . ' ' . $b_election_max_votes .' ' . __('candidates', TEXTDOMAIN) . ' ';
+			$sel_cand = 'Select up to ' . $b_election_max_votes .' candidates ';
 		}
 
-		echo '<div style="padding-top: 20px;">' . $sel_cand . __('from the list below. When you have made your choice, click the "Vote" button.', TEXTDOMAIN) . '</div>';
-		echo __('If during the selection you click on the wrong candidate, just click again to remove the vote.', TEXTDOMAIN) . '<br>';
-		echo __('Once you click the "Submit my votes" button, your choice is stored and can no longer be changed.', TEXTDOMAIN) . '</div><br>';
+		echo '<div style="padding-top: 20px;">' . $sel_cand . 'from the list below. When you have made your choice, click the "Vote" button.</div>';
+		echo 'If during the selection you click on the wrong candidate, just click again to remove the vote.<br>';
+		echo 'Once you click the "Submit my votes" button, your choice is stored and can no longer be changed.</div><br>';
 
 		echo '<div class="container">';
 		foreach ($b_election_cand_ids as $key=>$cand_id) {
@@ -538,7 +527,7 @@ function shortcode_b_election() {
 		echo '</div>';
 
 		echo '<br><div class=""><form action="" method="post" style="display: inline;">';
-		echo '<input type="submit" name="submitvotes" value="  ' . __('Submit my votes', TEXTDOMAIN) . '  " style="padding:5px 15px; background:#ccc; border:0 none; cursor:pointer; -webkit-border-radius: 5px; border-radius: 5px; font-size:18px;" disabled=disabled />';
+		echo '<input type="submit" name="submitvotes" value="Submit my votes" style="padding:5px 15px; background:#ccc; border:0 none; cursor:pointer; -webkit-border-radius: 5px; border-radius: 5px; font-size:18px;" disabled=disabled />';
 		echo '</form>';
 		echo '</div>';
 
