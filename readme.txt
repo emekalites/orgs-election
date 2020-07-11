@@ -1,6 +1,6 @@
 === Organisation Election ===
-Contributors: casiepa
-Donate link:
+Contributors: caihedoro
+Donate link: https://www.buymeacoffee.com/emekaihedoro
 Tags: management board,board,elections,election
 Requires at least: 4.0
 Tested up to: 5.4.2
